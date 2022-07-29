@@ -1,0 +1,51 @@
+[
+  {
+    "id": "1",
+    "name": "The Interactive College",
+    "logoLink": "https://placekitten.com/400/301",
+    "specialties": ["Excavation"],
+    "city": "New York"
+  },
+  {
+    "id": "2",
+    "name": "Bloom Marketing",
+    "logoLink": "https://placekitten.com/400/302",
+    "specialties": ["Plumbing"],
+    "city": "Boston"
+  },
+  {
+    "id": "3",
+    "name": "Hearty Pancake",
+    "logoLink": "https://placekitten.com/400/313",
+    "specialties": ["Electrical"],
+    "city": "Berlin"
+  },
+  {
+    "id": "4",
+    "name": "Hospital Tutor",
+    "logoLink": "https://placekitten.com/400/304",
+    "specialties": ["Plumbing", "Electrical"],
+    "city": "Paris"
+  },
+  {
+    "id": "5",
+    "name": "House Brush",
+    "logoLink": "https://placekitten.com/400/305",
+    "specialties": ["Excavation"],
+    "city": "New York"
+  },
+  {
+    "id": "6",
+    "name": "The Fresh Breakfast",
+    "logoLink": "https://placekitten.com/400/306",
+    "specialties": ["Plumbing"],
+    "city": "Boston"
+  },
+  {
+    "id": "7",
+    "name": "Think Ink",
+    "logoLink": "https://placekitten.com/400/307",
+    "specialties": ["Electrical"],
+    "city": "Paris"
+  }
+]

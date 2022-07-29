@@ -77,6 +77,10 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'import/prefer-default-export': 'off',
     'import/no-named-as-default': 'off',
+    'func-names': 'off',
+    'testing-library/no-await-sync-query': 'off',
+    'react/jsx-no-constructed-context-values': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
     'import/no-extraneous-dependencies': [
       'error',
       { devDependencies: ['**/*.test.tsx', '**/*.test.ts'] },
