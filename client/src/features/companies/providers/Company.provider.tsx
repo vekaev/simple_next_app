@@ -9,7 +9,7 @@ import React, {
 import { usePersistStorage } from '@hooks/usePersistStorage';
 import { Company, CompanyFilters, Speciality } from '@shared/types/entities';
 import { getCompanies, getSpecialties } from '../services/api';
-import { isEmptyFiltersFields } from '../utils/isEmptyFiltersFields';
+import { isFilterFieldsEmpty } from '../utils/isFilterFieldsEmpty';
 
 const initialData = {
   companies: [],
@@ -68,7 +68,7 @@ export const CompanyDataProvider: React.FC<{
     (() => {
       // Fetch all companies on first render
       // if filters exist, don't render all companies
-      fetchCompanies(undefined, isEmptyFiltersFields(filters)).then(result => {
+      fetchCompanies(undefined, isFilterFieldsEmpty(filters)).then(result => {
         allCompanies.current = result;
       });
       getSpecialties().then(setSpecialtiesList);
@@ -76,7 +76,7 @@ export const CompanyDataProvider: React.FC<{
   }, []);
 
   useEffect(() => {
-    if (isEmptyFiltersFields(filters)) {
+    if (isFilterFieldsEmpty(filters)) {
       if (allCompanies.current.length > 0) setCompanies(allCompanies.current);
       return;
     }
