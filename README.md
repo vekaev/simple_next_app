@@ -8,6 +8,7 @@
     [x] - save filters to local storage
     [ ] - add pagination
     [ ] - add debouncing
+    [ ] - add request caching (React Query, useSWR, RTK Query)
     [ ] - add test coverage
     [ ] - add optimization for backend services
     [x] - add dark mode
