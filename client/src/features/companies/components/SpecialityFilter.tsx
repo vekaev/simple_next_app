@@ -30,7 +30,7 @@ const SpecialityFilter: React.FC = () => {
         });
       }
     },
-    [filters.specialties]
+    [filters]
   );
 
   return specialtiesList.length ? (
