@@ -46,22 +46,19 @@ export const CompanyDataProvider: React.FC<{
   });
 
   const fetchCompanies = useCallback(
-    async (f?: CompanyFilters): Promise<Company[]> => {
+    async (f?: CompanyFilters, shouldSet = true): Promise<Company[]> => {
       let result: Company[] = [];
 
       setLoading(true);
       try {
-        const newCompanies = await getCompanies(f);
-
-        setCompanies(newCompanies);
-        result = newCompanies;
+        result = await getCompanies(f);
       } catch (e) {
-        console.error(e);
-        setCompanies([]);
+        // ignore
       } finally {
         setLoading(false);
       }
 
+      if (shouldSet) setCompanies(result);
       return result;
     },
     []
@@ -69,7 +66,9 @@ export const CompanyDataProvider: React.FC<{
 
   useEffect(() => {
     (() => {
-      fetchCompanies().then(result => {
+      // Fetch all companies on first render
+      // if filters exist, don't render all companies
+      fetchCompanies(undefined, isEmptyFiltersFields(filters)).then(result => {
         allCompanies.current = result;
       });
       getSpecialties().then(setSpecialtiesList);

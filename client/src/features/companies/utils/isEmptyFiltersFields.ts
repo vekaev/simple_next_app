@@ -1,4 +1,4 @@
-export const isEmptyFiltersFields = (obj: object) =>
-  Object.values(obj)
-    .filter(Boolean)
-    .filter(item => !!item.length).length === 0;
+import { CompanyFilters } from '@shared/types/entities';
+
+export const isEmptyFiltersFields = (obj: CompanyFilters) =>
+  Object.values(obj).filter(item => !!item.length).length === 0;

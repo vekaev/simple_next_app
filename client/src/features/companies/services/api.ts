@@ -1,13 +1,14 @@
 import api from '@services/api';
 
 import { Company, CompanyFilters, Speciality } from '@shared/types/entities';
+import { getSerializedParams } from '@utils/getSerializedParams';
 
 const getCompanies = async (
   filters: Partial<CompanyFilters> = {}
 ): Promise<Company[]> => {
   try {
     const { data } = await api.get<Company[]>('/companies', {
-      params: { ...filters, specialties: filters.specialties?.join(',') || '' },
+      params: getSerializedParams(filters),
     });
 
     if (!data?.length) return [];

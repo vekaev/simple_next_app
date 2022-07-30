@@ -21,6 +21,7 @@
       "@components*": ["client/src/components*"],
       "@providers*": ["client/src/providers*"],
       "@hooks*": ["client/src/hooks*"],
+      "@utils*": ["client/src/utils*"],
       "@services*": ["client/src/services*"],
       "@*": ["*"]
     }
