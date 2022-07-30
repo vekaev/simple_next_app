@@ -1,10 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { SpecialityService } from '@pages/api/src/services/Speciality.service';
+import { SpecialityService } from '@server/src/services/Speciality.service';
+import { Speciality } from '@shared/types/entities';
 
 export default async function handler(
   _req: NextApiRequest,
-  res: NextApiResponse<string[]>
+  res: NextApiResponse<Speciality[]>
 ) {
   const result = await SpecialityService.getSpecialties();
 

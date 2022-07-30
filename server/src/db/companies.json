@@ -1,0 +1,114 @@
+[
+  {
+    "id": "1",
+    "name": "The Interactive College",
+    "logoLink": "https://placekitten.com/400/301",
+    "specialties": [
+      {
+        "id": "1",
+        "name": "Excavation"
+      }
+    ],
+    "city": "New York"
+  },
+  {
+    "id": "2",
+    "name": "Bloom Marketing",
+    "logoLink": "https://placekitten.com/400/302",
+    "specialties": [
+      {
+        "id": "2",
+        "name": "Plumbing"
+      }
+    ],
+    "city": "Boston"
+  },
+  {
+    "id": "3",
+    "name": "Hearty Pancake",
+    "logoLink": "https://placekitten.com/400/313",
+    "specialties": [
+      {
+        "id": "3",
+        "name": "Electrical"
+      }
+    ],
+    "city": "Berlin"
+  },
+  {
+    "id": "4",
+    "name": "Hospital Tutor",
+    "logoLink": "https://placekitten.com/400/304",
+    "specialties": [
+      {
+        "id": "2",
+        "name": "Plumbing"
+      },
+      {
+        "id": "3",
+        "name": "Electrical"
+      }
+    ],
+    "city": "Paris"
+  },
+  {
+    "id": "5",
+    "name": "House Brush",
+    "logoLink": "https://placekitten.com/400/305",
+    "specialties": [
+      {
+        "id": "1",
+        "name": "Excavation"
+      },
+      {
+        "id": "2",
+        "name": "Plumbing"
+      },
+      {
+        "id": "3",
+        "name": "Electrical"
+      }
+    ],
+    "city": "New York"
+  },
+  {
+    "id": "6",
+    "name": "The Fresh Breakfast",
+    "logoLink": "https://placekitten.com/400/306",
+    "specialties": [
+      {
+        "id": "2",
+        "name": "Plumbing"
+      }
+    ],
+    "city": "Boston"
+  },
+  {
+    "id": "7",
+    "name": "Think Ink",
+    "logoLink": "https://placekitten.com/401/307",
+    "specialties": [
+      {
+        "id": "3",
+        "name": "Electrical"
+      }
+    ],
+    "city": "Paris"
+  },
+  {
+    "id": "8",
+    "name": "Last one",
+    "logoLink": "https://placekitten.com/400/347",
+    "specialties": [
+      {
+        "id": "2",
+        "name": "Plumbing"
+      },
+      {
+        "id": "1",
+        "name": "Excavation"
+      }
+    ],
+    "city": "Berlin"
+  }
+]

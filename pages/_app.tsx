@@ -1,31 +1,26 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { MantineProvider } from '@mantine/core';
 
-export default function App(props: AppProps) {
-  const { Component, pageProps } = props;
+import { Header } from '@components';
+import { ThemeProvider } from '@providers/Theme.provider';
 
-  return (
-    <>
-      <Head>
-        <title>Companies</title>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
-      </Head>
+const App = ({ Component, pageProps }: AppProps) => (
+  <>
+    <Head>
+      <title>Companies</title>
+      <meta
+        name="viewport"
+        content="minimum-scale=1, initial-scale=1, width=device-width"
+      />
+    </Head>
 
-      <MantineProvider
-        withGlobalStyles
-        withNormalizeCSS
-        theme={{
-          colorScheme: 'light',
-        }}
-      >
-        <main>
-          <Component {...pageProps} />
-        </main>
-      </MantineProvider>
-    </>
-  );
-}
+    <ThemeProvider>
+      <main>
+        <Header />
+        <Component {...pageProps} />
+      </main>
+    </ThemeProvider>
+  </>
+);
+
+export default App;
