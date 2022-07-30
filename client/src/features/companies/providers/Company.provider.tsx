@@ -76,12 +76,17 @@ export const CompanyDataProvider: React.FC<{
   }, []);
 
   useEffect(() => {
-    if (isFilterFieldsEmpty(filters)) {
-      if (allCompanies.current.length > 0) setCompanies(allCompanies.current);
-      return;
-    }
+    const timer = setTimeout(() => {
+      if (isFilterFieldsEmpty(filters)) {
+        if (allCompanies.current.length > 0) setCompanies(allCompanies.current);
+        return;
+      }
 
-    fetchCompanies(filters);
+      fetchCompanies(filters);
+    });
+
+    // Decline previous companies fetch
+    return () => clearTimeout(timer);
   }, [filters]);
 
   return (
