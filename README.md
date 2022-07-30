@@ -1,4 +1,4 @@
-(https://simple-next-app-zeta.vercel.app)[https://simple-next-app-zeta.vercel.app/]
+[https://simple-next-app-zeta.vercel.app](https://simple-next-app-zeta.vercel.app/)
 
 # TODO:
 
