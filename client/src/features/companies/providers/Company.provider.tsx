@@ -65,14 +65,12 @@ export const CompanyDataProvider: React.FC<{
   );
 
   useEffect(() => {
-    (() => {
-      // Fetch all companies on first render
-      // if filters exist, don't render all companies
-      fetchCompanies(undefined, isFilterFieldsEmpty(filters)).then(result => {
-        allCompanies.current = result;
-      });
-      getSpecialties().then(setSpecialtiesList);
-    })();
+    // Fetch all companies on first render
+    // if filters exist, don't render all companies
+    fetchCompanies(undefined, isFilterFieldsEmpty(filters)).then(result => {
+      allCompanies.current = result;
+    });
+    getSpecialties().then(setSpecialtiesList);
   }, []);
 
   useEffect(() => {
