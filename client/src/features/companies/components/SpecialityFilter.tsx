@@ -5,14 +5,14 @@ import { TitledCheckbox } from '@components';
 import { useCompanies } from '../hooks/useCompanies';
 
 const SpecialityFilter: React.FC = () => {
-  const { specialtiesList, filters, setFilters } = useCompanies();
+  const { specialties, filters, setFilters } = useCompanies();
 
   const activeSpecialtiesIds = useMemo(
     () =>
-      specialtiesList
+      specialties
         .map(specialty => specialty.id)
         .filter(id => filters.specialties.includes(id)),
-    [specialtiesList, filters.specialties]
+    [specialties, filters.specialties]
   );
   const handleCheckboxChange = useCallback(
     (specialtyId: string) => (isChecked: boolean) => {
@@ -33,7 +33,7 @@ const SpecialityFilter: React.FC = () => {
     [filters]
   );
 
-  return specialtiesList.length ? (
+  return specialties.length ? (
     <SimpleGrid
       cols={3}
       breakpoints={[
@@ -41,7 +41,7 @@ const SpecialityFilter: React.FC = () => {
         { maxWidth: 'sm', cols: 1 },
       ]}
     >
-      {specialtiesList.map(specialty => (
+      {specialties.map(specialty => (
         <TitledCheckbox
           key={specialty.id}
           title={specialty.name}

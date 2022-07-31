@@ -1,5 +1,5 @@
-import CompaniesData from '@server/src/db/companies.json';
 import { Company, Speciality } from '@shared/types/entities';
+import CompaniesData from '../db/companies.json';
 
 interface GetAllCompaniesParams {
   filterBy: Partial<Record<keyof Company, string>>;

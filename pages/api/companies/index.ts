@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { CompanyService } from '@server/src/services/Company.service';
+import { CompanyService } from '@server/services/Company.service';
 import { Company } from '@shared/types/entities/Company.entity';
 
 type GetAllCompaniesParams = Partial<Record<keyof Company, string>>;

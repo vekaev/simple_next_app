@@ -11,7 +11,7 @@ const getCompanies = async (
       params: getSerializedParams(filters),
     });
 
-    if (!data?.length) return [];
+    if (!data.length) return [];
 
     return data;
   } catch (e) {

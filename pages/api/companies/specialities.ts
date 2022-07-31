@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { SpecialityService } from '@server/src/services/Speciality.service';
+import { SpecialityService } from '@server/services/Speciality.service';
 import { Speciality } from '@shared/types/entities';
 
 export default async function handler(

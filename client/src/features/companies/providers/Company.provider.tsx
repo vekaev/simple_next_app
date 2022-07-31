@@ -13,7 +13,7 @@ import { isFilterFieldsEmpty } from '../utils/isFilterFieldsEmpty';
 
 const initialData = {
   companies: [],
-  specialtiesList: [],
+  specialties: [],
   filters: {
     name: '',
     specialties: [],
@@ -24,7 +24,7 @@ const initialData = {
 
 type ICompanyDataContext = {
   companies: Company[];
-  specialtiesList: Speciality[];
+  specialties: Speciality[];
   filters: CompanyFilters;
   loading: boolean;
   setFilters: (filters: CompanyFilters) => void;
@@ -36,17 +36,17 @@ export const CompanyDataContext =
 export const CompanyDataProvider: React.FC<{
   children: React.ReactNode;
 }> = ({ children }) => {
-  const [loading, setLoading] = useState(false);
   const allCompanies = useRef<Company[]>([]);
+  const [loading, setLoading] = useState(false);
   const [companies, setCompanies] = useState<Company[]>([]);
-  const [specialtiesList, setSpecialtiesList] = useState<Speciality[]>([]);
+  const [specialties, setSpecialties] = useState<Speciality[]>([]);
   const [filters, setFilters] = usePersistStorage<CompanyFilters>('filters', {
     name: '',
     specialties: [],
   });
 
   const fetchCompanies = useCallback(
-    async (f?: CompanyFilters, shouldSet = true): Promise<Company[]> => {
+    async (f?: CompanyFilters): Promise<Company[]> => {
       let result: Company[] = [];
 
       setLoading(true);
@@ -58,7 +58,6 @@ export const CompanyDataProvider: React.FC<{
         setLoading(false);
       }
 
-      if (shouldSet) setCompanies(result);
       return result;
     },
     []
@@ -66,32 +65,27 @@ export const CompanyDataProvider: React.FC<{
 
   useEffect(() => {
     // Fetch all companies on first render
-    // if filters exist, don't render all companies
-    fetchCompanies(undefined, isFilterFieldsEmpty(filters)).then(result => {
+    fetchCompanies().then(result => {
       allCompanies.current = result;
+      if (isFilterFieldsEmpty(filters)) setCompanies(result);
     });
-    getSpecialties().then(setSpecialtiesList);
+    getSpecialties().then(setSpecialties);
   }, []);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (isFilterFieldsEmpty(filters)) {
-        if (allCompanies.current.length > 0) setCompanies(allCompanies.current);
-        return;
-      }
+    if (isFilterFieldsEmpty(filters)) {
+      if (allCompanies.current.length > 0) setCompanies(allCompanies.current);
+      return;
+    }
 
-      fetchCompanies(filters);
-    });
-
-    // Decline previous companies fetch
-    return () => clearTimeout(timer);
+    fetchCompanies(filters).then(setCompanies);
   }, [filters]);
 
   return (
     <CompanyDataContext.Provider
       value={{
         companies,
-        specialtiesList,
+        specialties,
         filters,
         loading,
         setFilters,

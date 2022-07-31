@@ -1,5 +1,5 @@
-import SpecialitiesData from '@server/src/db/specialities.json';
-import { Speciality } from '@shared/types/entities/Speciality.entity';
+import { Speciality } from '@shared/types/entities';
+import SpecialitiesData from '../db/specialities.json';
 
 export const SpecialityService = {
   getSpecialties: async (): Promise<Speciality[]> => {

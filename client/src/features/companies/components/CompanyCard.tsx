@@ -49,7 +49,7 @@ const CompanyCard: React.FC<IProps> = ({
           {specialty.name}
         </Badge>
       )),
-    [specialties, theme]
+    [specialties, theme.colorScheme]
   );
 
   return (
