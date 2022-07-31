@@ -1,7 +1,6 @@
 import React from 'react';
 import DefaultLink from 'next/link';
-import { Button } from '@mantine/core';
-import { ButtonProps } from '@node_modules/@mantine/core/lib/Button/Button';
+import { Button, ButtonProps } from '@mantine/core';
 
 type IProps = {
   href: string;
