@@ -81,9 +81,17 @@ module.exports = {
     'testing-library/no-await-sync-query': 'off',
     'react/jsx-no-constructed-context-values': 'off',
     '@typescript-eslint/no-empty-function': 'off',
+    'testing-library/no-node-access': 'off',
     'import/no-extraneous-dependencies': [
       'error',
-      { devDependencies: ['**/*.test.tsx', '**/*.test.ts'] },
+      {
+        devDependencies: [
+          '**/*.test.tsx',
+          '**/*.test.ts',
+          '**/test/*',
+          'jest.setup.js',
+        ],
+      },
     ],
   },
 };

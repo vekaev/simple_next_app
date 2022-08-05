@@ -32,7 +32,7 @@ const getCompanyById = async (id: string): Promise<Company | null> => {
 
 const getSpecialties = async (): Promise<Speciality[]> => {
   try {
-    const { data } = await api.get<Speciality[]>('/companies/specialities');
+    const { data } = await api.get<Speciality[]>('/specialities');
     return data;
   } catch (e) {
     console.error(e);

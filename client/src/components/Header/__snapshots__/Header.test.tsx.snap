@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<div>
+  <div
+    class="mantine-Group-root mantine-kcnu28"
+  >
+    <div
+      class="mantine-SegmentedControl-root mantine-Group-child mantine-s3no6b"
+    >
+      <span
+        class="mantine-SegmentedControl-active mantine-1a1fl52"
+      />
+      <div
+        class="__mantine-ref-control mantine-SegmentedControl-control mantine-SegmentedControl-controlActive mantine-9jajho"
+      >
+        <input
+          checked=""
+          class="mantine-1islhj6 mantine-SegmentedControl-input"
+          id="mantine-r0-light"
+          name="mantine-r0"
+          type="radio"
+          value="light"
+        />
+        <label
+          class="__mantine-ref-label mantine-SegmentedControl-label mantine-SegmentedControl-labelActive mantine-txut78"
+          for="mantine-r0-light"
+        >
+          <div
+            class="mantine-8od8ev"
+          >
+            <svg
+              class="icon icon-tabler icon-tabler-sun"
+              fill="none"
+              height="16"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+                stroke="none"
+              />
+              <circle
+                cx="12"
+                cy="12"
+                r="4"
+              />
+              <path
+                d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"
+              />
+            </svg>
+            <div
+              class="mantine-1gcamzp"
+            >
+              Light
+            </div>
+          </div>
+        </label>
+      </div>
+      <div
+        class="__mantine-ref-control mantine-s28z26 mantine-SegmentedControl-control"
+      >
+        <input
+          class="mantine-1islhj6 mantine-SegmentedControl-input"
+          id="mantine-r0-dark"
+          name="mantine-r0"
+          type="radio"
+          value="dark"
+        />
+        <label
+          class="__mantine-ref-label mantine-o36ra8 mantine-SegmentedControl-label"
+          for="mantine-r0-dark"
+        >
+          <div
+            class="mantine-8od8ev"
+          >
+            <svg
+              class="icon icon-tabler icon-tabler-moon"
+              fill="none"
+              height="16"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+                stroke="none"
+              />
+              <path
+                d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"
+              />
+            </svg>
+            <div
+              class="mantine-1gcamzp"
+            >
+              Dark
+            </div>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;
