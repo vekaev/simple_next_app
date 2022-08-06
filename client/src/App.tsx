@@ -4,6 +4,10 @@ import Head from 'next/head';
 import { Header } from '@components';
 import { ThemeProvider } from '@providers/Theme.provider';
 
+if (process.env.NEXT_PUBLIC_API_MOCKING === 'enabled') {
+  require('./__mocks__');
+}
+
 const App = ({ Component, pageProps }: AppProps) => (
   <>
     <Head>

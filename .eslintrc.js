@@ -82,6 +82,7 @@ module.exports = {
     'react/jsx-no-constructed-context-values': 'off',
     '@typescript-eslint/no-empty-function': 'off',
     'testing-library/no-node-access': 'off',
+    'global-require': 'off',
     'import/no-extraneous-dependencies': [
       'error',
       {
@@ -90,6 +91,7 @@ module.exports = {
           '**/*.test.ts',
           '**/test/*',
           'jest.setup.js',
+          '**/__mocks__/*',
         ],
       },
     ],
