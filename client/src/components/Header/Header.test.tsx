@@ -1,11 +1,14 @@
-import { screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { renderWithTheme } from '@utils/test/renderWithTheme';
+
+import { renderWithTheme } from '@utils/test';
+
 import Header from './Header';
 
 describe('Header', () => {
   test('renders correctly', () => {
     const { container } = renderWithTheme(<Header />);
+
     expect(container).toMatchSnapshot();
 
     const lightThemeRadio = screen.getByLabelText('Light');
@@ -14,7 +17,8 @@ describe('Header', () => {
     expect(lightThemeRadio).toBeChecked();
     expect(darkThemeRadio).not.toBeChecked();
   });
-  test('should show popover on hover', async () => {
+
+  test('should show popover on hover', () => {
     const { container } = renderWithTheme(<Header />);
     const headerWrapper = container.firstChild as Element;
     let popover = screen.queryByText(/also depends on computer theme/i);
@@ -33,18 +37,20 @@ describe('Header', () => {
 
     expect(popover).not.toBeInTheDocument();
   });
-  test.skip('should toggle color scheme on click', () => {
+
+  test('should toggle color scheme on click', () => {
     renderWithTheme(<Header />);
 
     let [lightThemeRadio, darkThemeRadio] = screen.getAllByRole('radio');
 
     expect(lightThemeRadio).toBeChecked();
+    expect(darkThemeRadio).not.toBeChecked();
 
-    // screen.debug(darkThemeRadio);
+    fireEvent.click(darkThemeRadio);
 
     [lightThemeRadio, darkThemeRadio] = screen.getAllByRole('radio');
 
-    userEvent.click(darkThemeRadio);
     expect(darkThemeRadio).toBeChecked();
+    expect(lightThemeRadio).not.toBeChecked();
   });
 });
