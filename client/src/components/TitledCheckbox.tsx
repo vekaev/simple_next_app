@@ -60,6 +60,7 @@ export function TitledCheckbox({
       </div>
 
       <Checkbox
+        title={title}
         checked={checked}
         onChange={handleChange}
         tabIndex={-1}

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import SearchCompaniesNames from './SearchCompaniesNames';
-import SpecialityFilter from './SpecialityFilter';
+import { SpecialityFilter } from './SpecialityFilter';
 
 const FilterPanel: React.FC = () => (
   <>

@@ -2,7 +2,7 @@ import React, { useCallback, useMemo } from 'react';
 import { SimpleGrid } from '@mantine/core';
 
 import { TitledCheckbox } from '@components';
-import { useCompanies } from '../hooks/useCompanies';
+import { useCompanies } from '../../hooks/useCompanies';
 
 const SpecialityFilter: React.FC = () => {
   const { specialties, filters, setFilters } = useCompanies();
@@ -33,7 +33,7 @@ const SpecialityFilter: React.FC = () => {
     [filters]
   );
 
-  return specialties.length ? (
+  return (
     <SimpleGrid
       cols={3}
       breakpoints={[
@@ -50,7 +50,7 @@ const SpecialityFilter: React.FC = () => {
         />
       ))}
     </SimpleGrid>
-  ) : null;
+  );
 };
 
 export default SpecialityFilter;

@@ -85,6 +85,7 @@ module.exports = {
     'global-require': 'off',
     'import/export': 'off',
     'react/prop-types': 'off',
+    'testing-library/render-result-naming-convention': 'off',
     'import/no-extraneous-dependencies': [
       'error',
       {
