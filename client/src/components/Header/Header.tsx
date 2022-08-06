@@ -1,6 +1,7 @@
 import {
   Box,
   Center,
+  ColorScheme,
   Group,
   SegmentedControl,
   useMantineColorScheme,
@@ -17,7 +18,7 @@ const Header = () => {
       {hovered && 'Also depends on computer theme'}
       <SegmentedControl
         value={colorScheme}
-        onChange={(value: 'light' | 'dark') => toggleColorScheme(value)}
+        onChange={(value: ColorScheme) => toggleColorScheme(value)}
         data={[
           {
             value: 'light',

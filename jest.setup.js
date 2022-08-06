@@ -1,4 +1,9 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import '@testing-library/jest-dom/extend-expect';
+import ResizeObserver from 'resize-observer-polyfill';
+import { server } from './client/src/__mocks__/server';
 
-global.ResizeObserver = require('resize-observer-polyfill');
+global.ResizeObserver = ResizeObserver;
+
+beforeAll(() => server.listen());
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());

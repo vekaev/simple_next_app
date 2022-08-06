@@ -16,3 +16,9 @@ const MainScreen: NextPage = () => {
 };
 
 export default MainScreen;
+
+export function getStaticProps() {
+  return {
+    props: {},
+  };
+}

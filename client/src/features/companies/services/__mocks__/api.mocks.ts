@@ -1,61 +1,47 @@
 import { rest } from 'msw';
+
+import { BASE_URL } from '@services/api';
 import { Company, Speciality } from '@shared/types/entities';
 
-const BASE_URL = process.env.API_URL;
+const mockCompanies: Company[] = [
+  {
+    id: '1',
+    name: 'The Interactive College',
+    logoLink: '/__mocks__/company_photo.jpeg',
+    specialties: [
+      {
+        id: '1',
+        name: 'Excavation',
+      },
+    ],
+    city: 'New York',
+  },
+];
+const mockSpecialities: Speciality[] = [
+  {
+    id: '1',
+    name: 'Excavation',
+  },
+  {
+    id: '2',
+    name: 'Plumbing',
+  },
+  {
+    id: '3',
+    name: 'Electrical',
+  },
+];
 
 const handlers = [
-  rest.get(`${BASE_URL}/companies`, (_req, res, ctx) => {
-    return res(
-      ctx.json<Company[]>([
-        {
-          id: '1',
-          name: 'The Interactive College',
-          logoLink: 'https://placekitten.com/400/301',
-          specialties: [
-            {
-              id: '1',
-              name: 'Excavation',
-            },
-          ],
-          city: 'New York',
-        },
-      ])
-    );
-  }),
-  rest.get(`${BASE_URL}/companies/1`, (_req, res, ctx) => {
-    return res(
-      ctx.json<Company>({
-        id: '1',
-        name: 'The Interactive College',
-        logoLink: 'https://placekitten.com/400/301',
-        specialties: [
-          {
-            id: '1',
-            name: 'Excavation',
-          },
-        ],
-        city: 'New York',
-      })
-    );
-  }),
-  rest.get(`${BASE_URL}/specialities`, (_req, res, ctx) => {
-    return res(
-      ctx.json<Speciality[]>([
-        {
-          id: '1',
-          name: 'Excavation',
-        },
-        {
-          id: '2',
-          name: 'Plumbing',
-        },
-        {
-          id: '3',
-          name: 'Electrical',
-        },
-      ])
-    );
-  }),
+  rest.get(`${BASE_URL}/companies`, (_, res, ctx) =>
+    res(ctx.json<Company[]>(mockCompanies))
+  ),
+  rest.get(`${BASE_URL}/companies/:id`, (_, res, ctx) =>
+    res(ctx.json<Company>(mockCompanies[0]))
+  ),
+  rest.get(`${BASE_URL}/specialities`, (_, res, ctx) =>
+    res(ctx.json<Speciality[]>(mockSpecialities))
+  ),
 ];
 
 export default handlers;

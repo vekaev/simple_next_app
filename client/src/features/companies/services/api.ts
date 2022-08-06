@@ -1,4 +1,4 @@
-import api from '@services/api';
+import { api } from '@services/api';
 
 import { Company, CompanyFilters, Speciality } from '@shared/types/entities';
 import { getSerializedParams } from '@utils/getSerializedParams';

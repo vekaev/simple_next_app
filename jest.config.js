@@ -8,6 +8,8 @@ const customJestConfig = {
   moduleNameMapper: {
     '@utils/(.*)': '<rootDir>/client/src/utils/$1',
     '@providers/(.*)': '<rootDir>/client/src/providers/$1',
+    '@features/(.*)': '<rootDir>/client/src/features/$1',
+    '@services/(.*)': '<rootDir>/client/src/services/$1',
   },
   testEnvironment: 'jest-environment-jsdom',
 };

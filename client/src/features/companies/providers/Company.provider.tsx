@@ -8,6 +8,8 @@ import React, {
 
 import { usePersistStorage } from '@hooks/usePersistStorage';
 import { Company, CompanyFilters, Speciality } from '@shared/types/entities';
+import { ContainerComponent } from '@types';
+
 import { getCompanies, getSpecialties } from '../services/api';
 import { isFilterFieldsEmpty } from '../utils/isFilterFieldsEmpty';
 
@@ -33,17 +35,20 @@ type ICompanyDataContext = {
 export const CompanyDataContext =
   createContext<ICompanyDataContext>(initialData);
 
-export const CompanyDataProvider: React.FC<{
-  children: React.ReactNode;
-}> = ({ children }) => {
+const FILTERS_STORAGE_KEY = 'companies-filters';
+
+export const CompanyDataProvider: ContainerComponent = ({ children }) => {
   const allCompanies = useRef<Company[]>([]);
   const [loading, setLoading] = useState(false);
   const [companies, setCompanies] = useState<Company[]>([]);
   const [specialties, setSpecialties] = useState<Speciality[]>([]);
-  const [filters, setFilters] = usePersistStorage<CompanyFilters>('filters', {
-    name: '',
-    specialties: [],
-  });
+  const [filters, setFilters] = usePersistStorage<CompanyFilters>(
+    FILTERS_STORAGE_KEY,
+    {
+      name: '',
+      specialties: [],
+    }
+  );
 
   const fetchCompanies = useCallback(
     async (f?: CompanyFilters): Promise<Company[]> => {

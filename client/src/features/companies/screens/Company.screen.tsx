@@ -4,9 +4,10 @@ import { useRouter } from 'next/router';
 import { Title, Image, Button } from '@mantine/core';
 
 import { useGoBack } from '@hooks/useGoBack';
-import { getCompanyById } from '@features/companies/services/api';
-import { Company } from '@shared/types/entities/Company.entity';
-import { getErrorMessage } from '@shared/utils/getErrorMessage';
+import { Company } from '@shared/types/entities';
+import { getErrorMessage } from '@shared/utils';
+
+import { getCompanyById } from '../services/api';
 
 const CompanyScreen: React.FC = () => {
   const router = useRouter();

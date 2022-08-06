@@ -6,20 +6,24 @@ import {
 } from '@mantine/core';
 import { useColorScheme, useHotkeys, useLocalStorage } from '@mantine/hooks';
 
-interface IProps {
-  children: React.ReactNode;
-}
+import { ContainerComponent } from '@types';
+import { THEME } from '@utils/theme';
 
-export const ThemeProvider: React.FC<IProps> = ({ children }) => {
+const THEME_STORAGE_KEY = 'color-scheme';
+
+export const ThemeProvider: ContainerComponent = ({ children }) => {
   const preferredColorScheme = useColorScheme();
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
-    key: 'color-scheme',
+    key: THEME_STORAGE_KEY,
     defaultValue: preferredColorScheme,
     getInitialValueInEffect: true,
   });
 
-  const toggleColorScheme = (value?: ColorScheme) =>
-    setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
+  const toggleColorScheme = (value?: ColorScheme) => {
+    setColorScheme(
+      value || (colorScheme === THEME.DARK ? THEME.LIGHT : THEME.DARK)
+    );
+  };
 
   useEffect(() => {
     if (colorScheme !== preferredColorScheme) {

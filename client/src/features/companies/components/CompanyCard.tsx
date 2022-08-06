@@ -2,7 +2,8 @@ import React, { useMemo } from 'react';
 import { Badge, Card, createStyles, Group, Image, Text } from '@mantine/core';
 
 import { Link } from '@components';
-import { Company } from '@shared/types/entities/Company.entity';
+import { Company } from '@shared/types/entities';
+import { THEME } from '@utils/theme';
 
 interface IProps {
   company: Company;
@@ -11,12 +12,14 @@ interface IProps {
 const useStyles = createStyles(theme => ({
   card: {
     backgroundColor:
-      theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
+      theme.colorScheme === THEME.DARK ? theme.colors.dark[7] : theme.white,
   },
 
   section: {
     borderBottom: `1px solid ${
-      theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
+      theme.colorScheme === THEME.DARK
+        ? theme.colors.dark[4]
+        : theme.colors.gray[3]
     }`,
     paddingLeft: theme.spacing.md,
     paddingRight: theme.spacing.md,
@@ -44,7 +47,7 @@ const CompanyCard: React.FC<IProps> = ({
       specialties.map(specialty => (
         <Badge
           key={specialty.id}
-          color={theme.colorScheme === 'dark' ? 'dark' : 'gray'}
+          color={theme.colorScheme === THEME.DARK ? 'dark' : 'gray'}
         >
           {specialty.name}
         </Badge>

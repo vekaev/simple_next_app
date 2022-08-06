@@ -1,5 +1,6 @@
 import React, { ChangeEvent } from 'react';
 import { Checkbox, createStyles, Text } from '@mantine/core';
+import { THEME } from '@utils/theme';
 
 const useStyles = createStyles((theme, { checked }: { checked: boolean }) => ({
   button: {
@@ -11,7 +12,7 @@ const useStyles = createStyles((theme, { checked }: { checked: boolean }) => ({
       checked
         ? theme.fn.variant({ variant: 'outline', color: theme.primaryColor })
             .border
-        : theme.colorScheme === 'dark'
+        : theme.colorScheme === THEME.DARK
         ? theme.colors.dark[8]
         : theme.colors.gray[3]
     }`,
@@ -20,7 +21,7 @@ const useStyles = createStyles((theme, { checked }: { checked: boolean }) => ({
     backgroundColor: checked
       ? theme.fn.variant({ variant: 'light', color: theme.primaryColor })
           .background
-      : theme.colorScheme === 'dark'
+      : theme.colorScheme === THEME.DARK
       ? theme.colors.dark[8]
       : theme.white,
   },

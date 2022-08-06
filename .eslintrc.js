@@ -83,6 +83,8 @@ module.exports = {
     '@typescript-eslint/no-empty-function': 'off',
     'testing-library/no-node-access': 'off',
     'global-require': 'off',
+    'import/export': 'off',
+    'react/prop-types': 'off',
     'import/no-extraneous-dependencies': [
       'error',
       {
