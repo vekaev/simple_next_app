@@ -4,7 +4,10 @@ const nextJest = require('next/jest');
 const createJestConfig = nextJest({ dir: './' });
 
 const customJestConfig = {
-  setupFiles: ['<rootDir>/.jest/setEnvVars.js'],
+  setupFiles: [
+    '<rootDir>/.jest/setEnvVars.js',
+    '<rootDir>/.jest/browserMocks.js',
+  ],
   setupFilesAfterEnv: ['<rootDir>/.jest/jest.setup.js'],
   moduleNameMapper: {
     '@utils/(.*)': '<rootDir>/client/src/utils/$1',

@@ -4,7 +4,7 @@ export const usePersistStorage = <T>(
   key: string,
   initialValue: T
 ): [T, (newValue: T) => void] => {
-  const [value, setter] = useState<T>(() => {
+  const [value, setValue] = useState<T>(() => {
     try {
       const item = window?.localStorage.getItem(key);
 
@@ -14,18 +14,18 @@ export const usePersistStorage = <T>(
     }
   });
 
-  const setValue = useCallback(
+  const setAndSaveValue = useCallback(
     (newValue: T) => {
       try {
         window?.localStorage.setItem(key, JSON.stringify(newValue));
       } catch (error) {
         // ignore
       } finally {
-        setter(newValue);
+        setValue(newValue);
       }
     },
     [key]
   );
 
-  return [value, setValue];
+  return [value, setAndSaveValue];
 };

@@ -35,7 +35,7 @@ type ICompanyDataContext = {
 export const CompanyDataContext =
   createContext<ICompanyDataContext>(initialData);
 
-const FILTERS_STORAGE_KEY = 'companies-filters';
+export const FILTERS_STORAGE_KEY = 'companies-filters';
 
 export const CompanyDataProvider: ContainerComponent = ({ children }) => {
   const allCompanies = useRef<Company[]>([]);
