@@ -1,5 +1,7 @@
 # [🔗 https://simple-next-app-zeta.vercel.app 🔗](https://simple-next-app-zeta.vercel.app/)
 
+### [🥲 Refactoring video](https://youtu.be/Vh-vBFLutQk)
+
 ## 🧾 TODO:
 
     [x] - render list of items
